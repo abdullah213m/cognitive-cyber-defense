@@ -274,18 +274,18 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
       >
         <div
           style={{
-            maxWidth: 1320,
+            maxWidth: 1560,
             margin: '0 auto',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: 12
+            gap: 16
           }}
         >
           {/* Logo & Brand */}
           <div
             onClick={() => setActiveView('landing')}
-            style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', minWidth: 0 }}
+            style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', flexShrink: 0 }}
           >
             <div
               style={{
@@ -304,12 +304,12 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             >
               <Shield style={{ width: 18, height: 18, color: '#38BDF8' }} />
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <span
                 style={{
                   fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontWeight: 800,
-                  fontSize: 'clamp(1rem, 3.5vw, 1.25rem)',
+                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
                   color: '#FFFFFF',
                   letterSpacing: '-0.02em',
                   whiteSpace: 'nowrap'
@@ -318,7 +318,7 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                 AgentIQ <span style={{ color: '#06B6D4', fontWeight: 600, fontSize: '0.85em' }}>SENTINEL</span>
               </span>
               <span
-                className="hidden sm:inline-block"
+                className="desktop-badge"
                 style={{
                   fontSize: '0.64rem',
                   fontWeight: 700,
@@ -338,7 +338,7 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                 style={{
                   fontSize: '0.68rem',
                   fontWeight: 700,
-                  padding: '3px 10px',
+                  padding: '3px 9px',
                   borderRadius: 9999,
                   background: 'rgba(16, 185, 129, 0.12)',
                   border: '1px solid rgba(16, 185, 129, 0.35)',
@@ -346,7 +346,8 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                   letterSpacing: '0.03em',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: 6
+                  gap: 6,
+                  whiteSpace: 'nowrap'
                 }}
               >
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10B981', display: 'inline-block' }}></span>
@@ -355,22 +356,22 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             </div>
           </div>
 
-          {/* Center Navigation Links */}
+          {/* Center Navigation Links (Single Crisp Line, Never Wrap) */}
           <nav
             className="landing-nav-links"
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 24,
-              flexWrap: 'wrap'
+              gap: 18,
+              flexWrap: 'nowrap'
             }}
           >
             {[
               { id: 'architecture', label: 'Architecture' },
-              { id: 'datasets', label: 'Telemetry Datasets' },
+              { id: 'datasets', label: 'Datasets' },
               { id: 'mitre', label: 'MITRE Matrix' },
               { id: 'capabilities', label: 'Defense Engines' },
-              { id: 'metrics', label: 'SLA Benchmarks' }
+              { id: 'metrics', label: 'Benchmarks' }
             ].map((item) => (
               <button
                 key={item.id}
