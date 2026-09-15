@@ -63,7 +63,7 @@ export default function KpiBar({ kpis }) {
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-4 sm:mb-6">
       {cards.map((c, i) => {
         const Icon = c.icon;
         return (
@@ -75,21 +75,21 @@ export default function KpiBar({ kpis }) {
               borderColor: c.color.replace(')', ', 0.25)'),
             }}
           >
-            <div className="flex items-center justify-between text-xs font-sans font-medium text-slate-400 mb-2">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs font-sans font-medium text-slate-400 mb-1 sm:mb-2">
               <span className="truncate">{c.title}</span>
-              <Icon style={{ width: 15, height: 15, color: c.color }} />
+              <Icon style={{ width: 14, height: 14, color: c.color, flexShrink: 0 }} />
             </div>
             <div
-              className="text-2xl font-bold font-display tracking-tight text-white mb-1"
+              className="text-lg sm:text-2xl font-bold font-display tracking-tight text-white mb-0.5 sm:mb-1"
             >
               {c.value}
             </div>
-            <div className="text-xs text-slate-400 font-sans truncate">
+            <div className="text-[10px] sm:text-xs text-slate-400 font-sans truncate">
               {c.subtext}
             </div>
             {/* Mini visual accent line */}
             <div
-              className="w-full h-1 rounded-full mt-2.5"
+              className="w-full h-1 rounded-full mt-2 sm:mt-2.5"
               style={{ background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}
             >
               <div

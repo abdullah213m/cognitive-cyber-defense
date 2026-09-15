@@ -269,7 +269,7 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-          padding: '14px 32px'
+          padding: '12px 16px'
         }}
       >
         <div
@@ -279,18 +279,18 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: 20
+            gap: 12
           }}
         >
           {/* Logo & Brand */}
           <div
             onClick={() => setActiveView('landing')}
-            style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}
+            style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', minWidth: 0 }}
           >
             <div
               style={{
-                width: 36,
-                height: 36,
+                width: 34,
+                height: 34,
                 borderRadius: 10,
                 background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%)',
                 border: '1px solid rgba(6, 182, 212, 0.4)',
@@ -298,37 +298,41 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#38BDF8',
-                boxShadow: '0 0 20px rgba(6, 182, 212, 0.3)'
+                boxShadow: '0 0 20px rgba(6, 182, 212, 0.3)',
+                flexShrink: 0
               }}
             >
-              <Shield style={{ width: 20, height: 20, color: '#38BDF8' }} />
+              <Shield style={{ width: 18, height: 18, color: '#38BDF8' }} />
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
               <span
                 style={{
                   fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontWeight: 800,
-                  fontSize: '1.25rem',
+                  fontSize: 'clamp(1rem, 3.5vw, 1.25rem)',
                   color: '#FFFFFF',
-                  letterSpacing: '-0.02em'
+                  letterSpacing: '-0.02em',
+                  whiteSpace: 'nowrap'
                 }}
               >
-                AgentIQ <span style={{ color: '#06B6D4', fontWeight: 600, fontSize: '0.95rem' }}>SENTINEL</span>
+                AgentIQ <span style={{ color: '#06B6D4', fontWeight: 600, fontSize: '0.85em' }}>SENTINEL</span>
               </span>
               <span
+                className="hidden sm:inline-block"
                 style={{
-                  fontSize: '0.66rem',
+                  fontSize: '0.64rem',
                   fontWeight: 700,
-                  padding: '3px 8px',
+                  padding: '2px 7px',
                   borderRadius: 6,
                   background: 'rgba(59, 130, 246, 0.14)',
                   border: '1px solid rgba(59, 130, 246, 0.35)',
                   color: '#60A5FA',
                   letterSpacing: '0.04em',
-                  textTransform: 'uppercase'
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap'
                 }}
               >
-                TransOrg Datathon 2026
+                Datathon 2026
               </span>
               <span
                 style={{
@@ -351,8 +355,8 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             </div>
           </div>
 
-          {/* Center Navigation Links (Scroll within page) */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 26 }}>
+          {/* Center Navigation Links (Hidden on small mobile screens for clean UI) */}
+          <nav className="hidden lg:flex items-center gap-6">
             {[
               { id: 'architecture', label: 'Architecture' },
               { id: 'datasets', label: 'Telemetry Datasets' },
@@ -370,7 +374,7 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                   outline: 'none',
                   color: '#94A3B8',
                   fontFamily: 'inherit',
-                  fontSize: '0.86rem',
+                  fontSize: '0.84rem',
                   fontWeight: 500,
                   cursor: 'pointer',
                   padding: '6px 0',
@@ -385,22 +389,23 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
           </nav>
 
           {/* Right Action Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
             <button
               type="button"
               onClick={() => setActiveView('login')}
               style={{
                 background: activeView === 'login' ? 'rgba(6, 182, 212, 0.18)' : 'transparent',
-                border: activeView === 'login' ? '1px solid rgba(6, 182, 212, 0.4)' : 'none',
+                border: activeView === 'login' ? '1px solid rgba(6, 182, 212, 0.4)' : '1px solid rgba(255, 255, 255, 0.12)',
                 outline: 'none',
                 color: activeView === 'login' ? '#38BDF8' : '#CBD5E1',
                 fontFamily: 'inherit',
-                fontSize: '0.88rem',
+                fontSize: '0.80rem',
                 fontWeight: 600,
                 cursor: 'pointer',
-                padding: '8px 16px',
+                padding: '7px 12px',
                 borderRadius: '8px',
-                transition: 'all 0.18s ease'
+                transition: 'all 0.18s ease',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 if (activeView !== 'login') {
@@ -424,18 +429,19 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                 background: 'linear-gradient(135deg, #06B6D4 0%, #2563EB 100%)',
                 color: '#FFFFFF',
                 fontFamily: 'inherit',
-                fontSize: '0.88rem',
+                fontSize: '0.80rem',
                 fontWeight: 700,
-                padding: '9px 22px',
+                padding: '7px 16px',
                 borderRadius: 9999,
                 border: 'none',
                 outline: 'none',
                 cursor: 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: 8,
-                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                boxShadow: '0 0 24px rgba(6, 182, 212, 0.45)'
+                gap: 6,
+                transition: 'all 0.2s ease',
+                boxShadow: '0 0 20px rgba(6, 182, 212, 0.45)',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #22D3EE 0%, #3B82F6 100%)';
@@ -445,23 +451,24 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, #06B6D4 0%, #2563EB 100%)';
                 e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = '0 0 24px rgba(6, 182, 212, 0.45)';
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(6, 182, 212, 0.45)';
               }}
             >
-              <span>Launch Defense HUD</span>
-              <ArrowRight style={{ width: 15, height: 15 }} />
+              <span>Launch</span>
+              <ArrowRight style={{ width: 13, height: 13 }} />
             </button>
           </div>
         </div>
       </header>
 
-      {/* VIEW 1: DEDICATED FULL CYBER SOC LOGIN PORTAL */}
+      {/* RENDER VIEW: LOGIN or FULL LANDING PAGE */}
       {activeView === 'login' ? (
+        /* VIEW 1: DEDICATED ZERO-TRUST LOGIN SUITE */
         <section
           style={{
             maxWidth: 1240,
             margin: '0 auto',
-            padding: '40px 24px 80px',
+            padding: '24px 16px 60px',
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -469,16 +476,16 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             zIndex: 10
           }}
         >
-          {/* Header Banner */}
-          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          {/* Header Title */}
+          <div style={{ textAlign: 'center', marginBottom: 28 }}>
             <div
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 8,
-                padding: '6px 16px',
+                padding: '5px 14px',
                 borderRadius: 9999,
-                fontSize: '0.78rem',
+                fontSize: '0.72rem',
                 fontWeight: 700,
                 background: 'rgba(6, 182, 212, 0.12)',
                 border: '1px solid rgba(6, 182, 212, 0.35)',
@@ -486,13 +493,13 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                 marginBottom: 14
               }}
             >
-              <Lock style={{ width: 14, height: 14 }} />
+              <Lock style={{ width: 13, height: 13 }} />
               <span>DEFCON LEVEL 2 • ZERO-TRUST ACCESS GATEWAY</span>
             </div>
             <h1
               style={{
                 fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
-                fontSize: '2.4rem',
+                fontSize: 'clamp(1.6rem, 5vw, 2.4rem)',
                 fontWeight: 800,
                 color: '#FFFFFF',
                 marginBottom: 10
@@ -500,17 +507,17 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             >
               Enterprise SOC Authentication Portal
             </h1>
-            <p style={{ fontSize: '0.92rem', color: '#94A3B8', maxWidth: 640, margin: '0 auto' }}>
-              Continuous Identity Verification aligned with NIST SP 800-207. Select your SOC operator clearance or authenticate with biometric FIDO2 credentials.
+            <p style={{ fontSize: '0.86rem', color: '#94A3B8', maxWidth: 640, margin: '0 auto', lineHeight: 1.5 }}>
+              Continuous Identity Verification aligned with NIST SP 800-207. Select your SOC operator clearance or authenticate with Google Workspace / Corporate Email.
             </p>
           </div>
 
-          {/* 2-Column Authentication Layout */}
+          {/* Responsive 2-Column Authentication Layout */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 28,
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))',
+              gap: 20,
               width: '100%',
               maxWidth: 1180
             }}

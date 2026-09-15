@@ -115,30 +115,30 @@ export default function App() {
       />
 
 
-      <main className="flex-1 w-full mx-auto p-6 space-y-6" style={{ maxWidth: 1600 }}>
+      <main className="flex-1 w-full mx-auto p-3 sm:p-5 md:p-6 space-y-4 sm:space-y-6" style={{ maxWidth: 1600 }}>
         {/* Zero-Trust Breach Alert Bar (if breach detected) */}
         {breachCount > 0 && (
           <div
-            className="p-4 rounded-xl flex items-center justify-between flex-wrap gap-4 text-xs"
+            className="p-3 sm:p-4 rounded-xl flex items-center justify-between flex-wrap gap-3 sm:gap-4 text-xs"
             style={{
               background: 'linear-gradient(90deg, rgba(244, 63, 94, 0.12) 0%, rgba(15, 23, 42, 0.95) 100%)',
               border: '1px solid rgba(244, 63, 94, 0.4)',
               boxShadow: '0 8px 24px -6px rgba(244, 63, 94, 0.2)'
             }}
           >
-            <div className="flex items-center gap-3">
-              <span className="pulse-dot-red"></span>
-              <AlertTriangle style={{ width: 18, height: 18, color: '#F43F5E' }} />
+            <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 flex-1 min-w-[240px]">
+              <span className="pulse-dot-red mt-1 sm:mt-0 flex-shrink-0"></span>
+              <AlertTriangle style={{ width: 18, height: 18, color: '#F43F5E', flexShrink: 0 }} />
               <div>
-                <span className="text-white font-bold text-sm">Zero-Trust Deprovisioning Violation: </span>
-                <span className="text-slate-300">
-                  {breachCount} offboarded / terminated employee identities are generating active network and IAM telemetry.
+                <span className="text-white font-bold text-xs sm:text-sm">Zero-Trust Deprovisioning Violation: </span>
+                <span className="text-slate-300 text-[11px] sm:text-xs">
+                  {breachCount} offboarded employee identities generating active telemetry.
                 </span>
               </div>
             </div>
             <button
               onClick={() => setActiveTab('sandbox')}
-              className="cyber-btn cyber-btn-red px-3.5 py-1.5 text-xs rounded-lg flex items-center gap-1.5 font-medium"
+              className="cyber-btn cyber-btn-red px-3 py-1.5 text-xs rounded-lg flex items-center gap-1.5 font-medium flex-shrink-0"
             >
               <span>Engage SOAR Containment</span>
               <ArrowRight style={{ width: 14, height: 14 }} />

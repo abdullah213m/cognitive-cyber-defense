@@ -271,28 +271,28 @@ export default function GlobalAttackMap({ deniedPackets, totalBytes }) {
   }, [isPaused]);
 
   return (
-    <div className="cyber-panel p-5 mb-6">
+    <div className="cyber-panel p-3 sm:p-5 mb-4 sm:mb-6">
       {/* Panel Header */}
-      <div className="flex items-center justify-between mb-4 flex-wrap gap-3 font-sans">
+      <div className="flex items-center justify-between mb-3 sm:mb-4 flex-wrap gap-2 sm:gap-3 font-sans">
         <div className="flex items-center gap-2">
-          <Globe style={{ width: 18, height: 18, color: '#60A5FA' }} />
-          <h2 className="text-base font-bold font-display text-white tracking-tight">
-            Live Global Telemetry Trajectory & Perimeter Defense
+          <Globe style={{ width: 18, height: 18, color: '#60A5FA', flexShrink: 0 }} />
+          <h2 className="text-sm sm:text-base font-bold font-display text-white tracking-tight">
+            Live Global Telemetry Trajectory &amp; Perimeter Defense
           </h2>
         </div>
-        <div className="flex items-center gap-4 text-xs">
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-slate-400">
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#F43F5E' }}></span>
-              Blocked Ingress
+        <div className="flex items-center gap-3 text-[11px] sm:text-xs flex-wrap">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <span className="flex items-center gap-1 text-slate-400">
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#F43F5E' }}></span>
+              Blocked
             </span>
-            <span className="flex items-center gap-1.5 text-slate-400">
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#38BDF8' }}></span>
-              Permitted Tunnel
+            <span className="flex items-center gap-1 text-slate-400">
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#38BDF8' }}></span>
+              Permitted
             </span>
-            <span className="flex items-center gap-1.5 text-slate-400">
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981' }}></span>
-              SOC Defense Core
+            <span className="flex items-center gap-1 text-slate-400">
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#10B981' }}></span>
+              HQ SOC
             </span>
           </div>
           <button
@@ -306,12 +306,11 @@ export default function GlobalAttackMap({ deniedPackets, totalBytes }) {
       </div>
 
       {/* Main Grid: Canvas + Live Feed */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 font-sans">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 sm:gap-4 font-sans">
         {/* Canvas World Area */}
         <div
-          className="lg:col-span-3 rounded-xl relative overflow-hidden"
+          className="lg:col-span-3 rounded-xl relative overflow-hidden h-[260px] sm:h-[320px] md:h-[380px]"
           style={{
-            height: 380,
             background: 'radial-gradient(ellipse at center, rgba(30, 41, 59, 0.4) 0%, rgba(11, 15, 25, 0.95) 100%)',
             border: '1px solid rgba(255, 255, 255, 0.08)',
             boxShadow: 'inset 0 0 30px rgba(0,0,0,0.7)'
@@ -319,19 +318,18 @@ export default function GlobalAttackMap({ deniedPackets, totalBytes }) {
         >
           <canvas ref={canvasRef} style={{ width: '100%', height: '100%', display: 'block' }} />
           {/* Overlay Corner Markers */}
-          <div className="absolute top-3 left-3 text-xs font-sans text-blue-400 font-medium opacity-80">
+          <div className="absolute top-2.5 left-2.5 text-[10px] sm:text-xs font-sans text-blue-400 font-medium opacity-80">
             Radar: Lat 12.97° N / Lon 77.59° E [Online]
           </div>
-          <div className="absolute bottom-3 right-3 text-xs font-sans text-slate-400 opacity-70">
-            Spectral Sweep: 2.4 GHz • Packets: 62.4k
+          <div className="absolute bottom-2.5 right-2.5 text-[10px] sm:text-xs font-sans text-slate-400 opacity-70">
+            Spectral Sweep: 2.4 GHz • 62.4k Packets
           </div>
         </div>
 
         {/* Live Packet Intercept Feed */}
         <div
-          className="p-4 rounded-xl flex flex-col justify-between"
+          className="p-3 sm:p-4 rounded-xl flex flex-col justify-between h-[240px] sm:h-[300px] md:h-[380px]"
           style={{
-            height: 380,
             background: 'rgba(15, 23, 42, 0.85)',
             border: '1px solid rgba(255, 255, 255, 0.07)',
             boxSizing: 'border-box'
