@@ -1,0 +1,43 @@
+{
+  "pipeline_executed_at": "2026-09-11T18:26:44.363608Z",
+  "datasets": {
+    "identity_master": {
+      "raw_rows": 3090,
+      "deduped_rows": 90,
+      "active_employees": 2493,
+      "terminated_employees": 507,
+      "cleaned_rows": 3000
+    },
+    "firewall_logs": {
+      "raw_rows": 30600,
+      "deduped_rows": 600,
+      "missing_timestamps": 3517,
+      "malformed_ips": 22367,
+      "invalid_ports": 12748,
+      "cleaned_rows": 30000
+    },
+    "iam_audit": {
+      "raw_rows": 20500,
+      "deduped_rows": 500,
+      "missing_timestamps": 2416,
+      "invalid_user_ids": 0,
+      "failed_logins": 4805,
+      "mfa_failures": 815,
+      "cleaned_rows": 20000
+    },
+    "endpoint_alerts": {
+      "raw_rows": 8240,
+      "deduped_rows": 240,
+      "missing_detected_timestamps": 976,
+      "temporal_anomalies": 483,
+      "critical_alerts": 771,
+      "cleaned_rows": 8000
+    }
+  },
+  "ml_insights": {
+    "total_entities_analyzed": 3000,
+    "ml_anomalies_detected": 150,
+    "anomaly_contamination_rate": 5.0,
+    "clusters_identified": 4
+  }
+}
