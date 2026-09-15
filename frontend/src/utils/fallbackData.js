@@ -13,7 +13,13 @@ export const FALLBACK_OVERVIEW = {
     terminated_active_breaches: 507,
     critical_threat_users: 142,
     high_threat_users: 284,
+    failed_logins: 4892,
+    failed_login_rate: 23.8,
+    critical_edr_alerts: 771,
     firewall_denied_packets: 6572,
+    firewall_deny_rate: 21.4,
+    temporal_paradox_anomalies: 483,
+    tampered_ip_packets: 512,
     mean_threat_score: 41.8
   },
   department_threats: [

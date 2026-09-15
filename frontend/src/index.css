@@ -1142,7 +1142,12 @@ body {
   scroll-snap-type: x mandatory;
 }
 
-/* Responsive Container & Spacing Helpers */
+@media (max-width: 992px) {
+  .landing-nav-links {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .cyber-header {
     padding: 10px 14px !important;
@@ -1213,5 +1218,6 @@ body {
     font-size: 1.0rem;
   }
 }
+
 
 

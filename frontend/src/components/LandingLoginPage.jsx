@@ -355,8 +355,16 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
             </div>
           </div>
 
-          {/* Center Navigation Links (Hidden on small mobile screens for clean UI) */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Center Navigation Links */}
+          <nav
+            className="landing-nav-links"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 24,
+              flexWrap: 'wrap'
+            }}
+          >
             {[
               { id: 'architecture', label: 'Architecture' },
               { id: 'datasets', label: 'Telemetry Datasets' },
@@ -377,8 +385,9 @@ export default function LandingLoginPage({ onLaunchPlatform, onLoginSuccess }) {
                   fontSize: '0.84rem',
                   fontWeight: 500,
                   cursor: 'pointer',
-                  padding: '6px 0',
-                  transition: 'color 0.18s ease'
+                  padding: '6px 4px',
+                  transition: 'color 0.18s ease',
+                  whiteSpace: 'nowrap'
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}
